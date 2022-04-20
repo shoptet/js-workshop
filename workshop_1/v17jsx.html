@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+  <h1>Some static html page</h1>
+
+  <h2>React APP 1 in static html</h2>
+  <div id="app1"></div>
+
+  <h2>React APP 2 in static html</h2>
+  <div id="app2"></div>
+
+  <script type="text/babel">
+    class ClassComponent extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { count: 0 };
+        this.onReset = this.onReset.bind(this);
+        this.tick = this.tick.bind(this);
+      }
+
+      componentDidMount() {
+        setInterval(this.tick, 1000)
+      }
+
+      tick() {
+        this.setState({ count: this.state.count + 1 });
+      }
+
+      onReset() {
+        this.setState({ count: 0 });
+      }
+
+      render() {
+        return <div>
+          <p>Hello from: {this.props.from}</p>
+          <p>Count: {this.state.count}</p>
+          <button onClick={this.onReset}>Reset</button>
+        </div>;
+      }
+    }
+
+    const FunctionComponent = (props) => {
+      const [count, setCount] = React.useState(0)
+
+      React.useEffect(function () {
+        setInterval(tick, 1000)
+      }, []);
+
+      const tick = () => {
+        //function because tick in setInterval not change when change count
+        setCount(function (count) { return count + 1 });
+      }
+
+      const onReset = () => {
+        setCount(0)
+      }
+
+      return <div>
+        <p>Hello from: {props.from}</p>
+        <p>Count: {count}</p>
+        <button onClick={onReset}>Reset</button>
+      </div>;
+    };
+
+    ReactDOM.render(<ClassComponent from="App 1" />, document.getElementById('app1'));
+    ReactDOM.render(<FunctionComponent from="App 2" />, document.getElementById('app2'));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/create-react-class/15.7.0/create-react-class.js"
+    integrity="sha512-NYsfJ31f63n3/CBtq7B/doai/TTyW1+662fnIlP22Rxw7plhXo5CLZ1xG1uMNAxstX/mousXrVq4RpDq2x2dPg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+  <h1>Some static html page</h1>
+
+  <h2>React APP 1 in static html</h2>
+  <div id="app1"></div>
+
+  <h2>React APP 2 in static html</h2>
+  <div id="app2"></div>
+
+  <script>
+    const ClassComponent = createReactClass({
+      render: function () {
+        return React.createElement("p", null, "Hello from: " + this.props.from)
+      }
+    });
+
+    function FunctionComponent(props) {
+      return React.createElement("p", null, "Hello from: " + props.from)
+    };
+
+    const app1 = ReactDOM.createRoot(document.getElementById('app1'));
+    app1.render(React.createElement(ClassComponent, { from: "App 1" }, null));
+    const app2 = ReactDOM.createRoot(document.getElementById('app2'));
+    app2.render(React.createElement(FunctionComponent, { from: "App 2" }, null));
+  </script>
+</body>
+
+</html>

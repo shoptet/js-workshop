@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/create-react-class/15.7.0/create-react-class.js"
+    integrity="sha512-NYsfJ31f63n3/CBtq7B/doai/TTyW1+662fnIlP22Rxw7plhXo5CLZ1xG1uMNAxstX/mousXrVq4RpDq2x2dPg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+  <h1>Some static html page</h1>
+
+  <h2>React APP 1 in static html</h2>
+  <div id="app1"></div>
+
+  <h2>React APP 2 in static html</h2>
+  <div id="app2"></div>
+
+  <script>
+    const ClassComponent = createReactClass({
+      getInitialState: function () {
+        return { count: 0 };
+      },
+
+      componentDidMount: function () {
+        setInterval(this.tick, 1000)
+      },
+
+      tick: function () {
+        this.setState({ count: this.state.count + 1 });
+      },
+
+      onReset: function () {
+        this.setState({ count: 0 });
+      },
+
+      render: function () {
+        return React.createElement("div", null,
+          React.createElement("p", null, "Hello from: " + this.props.from),
+          React.createElement("p", null, "Count: " + this.state.count),
+          React.createElement("button", { onClick: this.onReset }, "reset"),
+        )
+      }
+    });
+
+    function FunctionComponent(props) {
+      const [count, setCount] = React.useState(0)
+
+      React.useEffect(function () {
+        setInterval(tick, 1000)
+      }, []);
+
+      function tick() {
+        //function because tick in setInterval not change when change count
+        setCount(function (count) { return count + 1 });
+      }
+
+      function onReset() {
+        setCount(0)
+      }
+
+      return React.createElement("div", null,
+        React.createElement("p", null, "Hello from: " + props.from),
+        React.createElement("p", null, "Count: " + count),
+        React.createElement("button", { onClick: onReset }, "reset"),
+      )
+    };
+
+    ReactDOM.render(React.createElement(ClassComponent, { from: "App 1" }, null), document.getElementById('app1'));
+    ReactDOM.render(React.createElement(FunctionComponent, { from: "App 2" }, null), document.getElementById('app2'));
+  </script>
+</body>
+
+</html>
