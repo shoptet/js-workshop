@@ -8,4 +8,5 @@
 
 2. [Workshop 2 - 05.05.2022](/workshop_2) - Tonda
 
-   - React tutorial, first components using create-react-app
+   - React - Props and Hooks.
+   - First components using create-react-app
