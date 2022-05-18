@@ -10,3 +10,10 @@
 
    - React - Props and Hooks.
    - First components using create-react-app
+
+3. [Workshop 3 - 19.05.2022](/workshop_3) - Martin
+
+   - More practice with React hooks and component rendering cycle
+   - Uses of ref's  `current`
+   - `useState` gotchas
+   - How React compares values (dependencies)
