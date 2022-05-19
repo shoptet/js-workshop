@@ -5,8 +5,10 @@ export default function Dependencies() {
     const [value2, setValue2] = useState({ count: 0 });
 
     useEffect(() => {
-        console.log("Rendered");
-    }, [value, value2]);
+        console.log("useEffect");
+    }, [value, value2.count]);
+
+    console.log("Rendered ");
 
     return (
         <div>

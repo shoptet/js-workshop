@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export default function UseState2() {
     const [value, setValue] = useState(0);
-    const [total, setTotal] = useState(100);
 
-    useEffect(() => {
-        setTotal(100 - value);
-        console.log("The total is now " + total);
-    }, [value, total]);
-
-    console.log("Renders");
+    function doubleIncrease() {
+        setValue(value + 1);
+        setValue(value + 1);
+    }
 
     return (
         <div>
@@ -20,9 +17,9 @@ export default function UseState2() {
                 onChange={e => setValue(e.target.value)}
             />
             <button
-                onClick={() => setValue(value => Number.parseInt(value) + 1)}
+                onClick={doubleIncrease}
             >
-                Increase
+                Increase by 2
             </button>
         </div>
     );
