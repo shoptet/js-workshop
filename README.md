@@ -17,3 +17,10 @@
    - Uses of ref's  `current`
    - `useState` gotchas
    - How React compares values (dependencies)
+
+
+4. Workshop 3 - 16.06.2022 - Denis & Karel 
+
+   - Showcase of animation research in our current stack
+   - Experiments on: Three js, Pure CSS animations, JS animations
+   - Github repo: [sofa/prototypes/4g-animations](https://github.com/shoptet/sofa/tree/master/prototypes/4g-animations)
