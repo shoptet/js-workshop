@@ -180,6 +180,4 @@ const personObj = makeFullName({
   profession: "asdasd",
 });
 
-console.log("Dik ze jste prisli");
-
 // --------------------------------------------------------------------
