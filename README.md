@@ -26,7 +26,7 @@
 
 5. [Workshop 5 - 14.07.2022](/workshop_5) - Karel
 
-   - Introduction & Setup
+   - Introduction & Setup of TypeScript
    - Compiling TS with TSC compiler
    - tsconfig and better workflow
    - Basic types, objects, arrays, enums, functions (<https://www.typescriptlang.org/docs/handbook/basic-types.html>)
