@@ -31,3 +31,10 @@
    - tsconfig and better workflow
    - Basic types, objects, arrays, enums, functions (<https://www.typescriptlang.org/docs/handbook/basic-types.html>)
    - More advanced stuff (Generics, Unions etc)
+
+6. Workshop 6 - 28.07.2022 - Pavel
+
+   - Showcase of _add-on_ repositories, its features and how we could potentially work with add-ons in the future.
+   - Github repos: 
+     - [addon-repository-github-app](https://github.com/shoptet/addon-repository-github-app)
+     - [addon-repository-local-tooling](https://github.com/shoptet/addon-repository-local-tooling)
